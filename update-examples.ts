@@ -41,6 +41,9 @@ async function copyFile(srcFolder: string, srcFile: string, destFolder: string, 
         if (removeTypes) {
             content = content.replace(/(\):.*){/g, ") {");
             content = content.replace(/: INetworkEndPoint/g, "");
+            content = content.replace(/: number\[\]/g, "");
+            content = content.replace(/: number/g, "");
+            content = content.replace(/: string\[\]/g, "");
             content = content.replace(/: string/g, "");
             content = content.replace(/: any\[\]/g, "");
             content = content.replace(/: any/g, "");
