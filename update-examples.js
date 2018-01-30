@@ -72,6 +72,7 @@ async function doAll() {
     await deleteFiles("../iota-pico-examples-browser-js/src/", "**/*.html");
     await copyFiles("../iota-pico-examples-nodejs-ts/src/api/", "**/!(*.d).ts", "../iota-pico-examples-browser-js/src/api", ".js", true);
     await copyFiles("../iota-pico-examples-nodejs-ts/src/", "networkConfig.ts", "../iota-pico-examples-browser-js/src", ".js", true, browserClientReplacement);
+    await copyFiles("../iota-pico-examples-browser-ts/", "config.js", "../iota-pico-examples-browser-js/", ".js", false);
     await copyFiles("../iota-pico-examples-browser-ts/", "index.html", "../iota-pico-examples-browser-js/", ".html", false, { "TypeScript": "JavaScript" });
     await copyFiles("../iota-pico-examples-browser-ts/src/", "**/*.html", "../iota-pico-examples-browser-js/src/", ".html", false);
 }
