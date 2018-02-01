@@ -69,9 +69,8 @@ async function doAll(): Promise<void> {
     await copyFiles("../iota-pico-examples-nodejs-ts/src/", "networkConfig.ts", "../iota-pico-examples-nodejs-js/src", ".js", true);
 
     const browserClientReplacement = {
-        "import { NodeJsNetworkClient } from \"@iota-pico/pal-nodejs/dist/network/nodeJsNetworkClient\";": 
-        "import { BrowserNetworkClient } from \"@iota-pico/pal-browser/dist/network/browserNetworkClient\";",
-        "new NodeJsNetworkClient": "new BrowserNetworkClient"
+        "import { NetworkClient } from \"@iota-pico/pal-nodejs/dist/network/networkClient\";": 
+        "import { NetworkClient } from \"@iota-pico/pal-browser/dist/network/networkClient\";"
     };
 
     await deleteFiles("../iota-pico-examples-browser-ts/src/", "**/*.ts");
