@@ -58,22 +58,22 @@ async function copyFile(srcFolder, srcFile, destFolder, destExt, removeTypes, ad
     }
 }
 async function doAll() {
+    const palReplacement = {
+        "import { PAL } from \"@iota-pico/pal-nodejs/dist/pal\";": "import { PAL } from \"@iota-pico/pal-browser/dist/pal\";"
+    };
     await deleteFiles("../iota-pico-examples-nodejs-js/src/", "**/*.js");
-    await copyFiles("../iota-pico-examples-nodejs-ts/src/api/", "**/!(*.d).ts", "../iota-pico-examples-nodejs-js/src/api", ".js", true);
+    await copyFiles("../iota-pico-examples-nodejs-ts/src/api/", "**/!(*.d).ts", "../iota-pico-examples-nodejs-js/src/api", ".js", true, palReplacement);
     await copyFiles("../iota-pico-examples-nodejs-ts/src/", "index.ts", "../iota-pico-examples-nodejs-js/src", ".js", true);
     await copyFiles("../iota-pico-examples-nodejs-ts/src/", "networkConfig.ts", "../iota-pico-examples-nodejs-js/src", ".js", true);
-    const browserClientReplacement = {
-        "import { NetworkClient } from \"@iota-pico/pal-nodejs/dist/network/networkClient\";": "import { NetworkClient } from \"@iota-pico/pal-browser/dist/network/networkClient\";"
-    };
     await deleteFiles("../iota-pico-examples-browser-ts/src/", "**/*.ts");
-    await copyFiles("../iota-pico-examples-nodejs-ts/src/api/", "**/!(*.d).ts", "../iota-pico-examples-browser-ts/src/api", ".ts", false);
-    await copyFiles("../iota-pico-examples-nodejs-ts/src/", "networkConfig.ts", "../iota-pico-examples-browser-ts/src", ".ts", false, browserClientReplacement);
+    await copyFiles("../iota-pico-examples-nodejs-ts/src/api/", "**/!(*.d).ts", "../iota-pico-examples-browser-ts/src/api", ".ts", false, palReplacement);
+    await copyFiles("../iota-pico-examples-nodejs-ts/src/", "networkConfig.ts", "../iota-pico-examples-browser-ts/src", ".ts", false);
     await copyFiles("../iota-pico-examples-nodejs-ts/src/", "typings.d.ts", "../iota-pico-examples-browser-ts/src", ".ts", false);
     await deleteFiles("../iota-pico-examples-browser-js/src/", "**/*.js");
     await deleteFiles("../iota-pico-examples-browser-js/", "index.html");
     await deleteFiles("../iota-pico-examples-browser-js/src/", "**/*.html");
-    await copyFiles("../iota-pico-examples-nodejs-ts/src/api/", "**/!(*.d).ts", "../iota-pico-examples-browser-js/src/api", ".js", true);
-    await copyFiles("../iota-pico-examples-nodejs-ts/src/", "networkConfig.ts", "../iota-pico-examples-browser-js/src", ".js", true, browserClientReplacement);
+    await copyFiles("../iota-pico-examples-nodejs-ts/src/api/", "**/!(*.d).ts", "../iota-pico-examples-browser-js/src/api", ".js", true, palReplacement);
+    await copyFiles("../iota-pico-examples-nodejs-ts/src/", "networkConfig.ts", "../iota-pico-examples-browser-js/src", ".js", true);
     await copyFiles("../iota-pico-examples-browser-ts/", "config.js", "../iota-pico-examples-browser-js/", ".js", false);
     await copyFiles("../iota-pico-examples-browser-ts/", "index.html", "../iota-pico-examples-browser-js/", ".html", false, { "TypeScript": "JavaScript" });
     await copyFiles("../iota-pico-examples-browser-ts/src/", "**/*.html", "../iota-pico-examples-browser-js/src/", ".html", false);
