@@ -10,4 +10,4 @@ The libraries are written in TypeScript so are all strongly typed. The modules a
 
 ## Automation
 
-The update-examples.js script will use [@iota-pico/examples-nodejs-ts](https://github.com/iotaeco/iota-pico-examples-nodejs-ts) as a source to update all the other example repos.
+The update-examples.js script will use [@iota-pico/api-examples-nodejs](https://github.com/iotaeco/iota-pico-api-examples-nodejs) as a source to update all the other example repos.

@@ -1,14 +1,14 @@
 {
-    "name": "iota-pico-examples-automation",
+    "name": "iota-pico-api-examples-automation",
     "version": "0.9.0",
-    "description": "Scripts to update IOTA Pico example repos from one source.",
+    "description": "Scripts to update IOTA Pico API Example repos from one source.",
     "main": "update-examples.js",
     "author": "martyn@iota.eco",
     "license": "MIT",
     "devDependencies": {
         "@types/del": "^3.0.0",
         "@types/glob": "^5.0.35",
-        "@types/node": "^9.4.0",
+        "@types/node": "^9.4.7",
         "del": "^3.0.0",
         "glob": "^7.1.2"
     }
