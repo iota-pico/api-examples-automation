@@ -1,6 +1,6 @@
 {
     "name": "iota-pico-api-examples-automation",
-    "version": "0.9.0",
+    "version": "0.9.1",
     "description": "Scripts to update IOTA Pico API Example repos from one source.",
     "main": "update-examples.js",
     "author": "martyn@iota.eco",
