@@ -51,9 +51,9 @@ async function doAll() {
     const palReplacement = {
         "import { PAL } from \"@iota-pico/pal-nodejs/dist/pal\";": "import { PAL } from \"@iota-pico/pal-browser/dist/pal\";"
     };
-    await deleteFiles("../iota-pico-api-examples-browser/src/", "**/*.ts");
-    await copyFiles("../iota-pico-api-examples-nodejs/src/api/", "**/!(*.d).ts", "../iota-pico-api-examples-browser/src/api", ".ts", palReplacement);
-    await copyFiles("../iota-pico-api-examples-nodejs/src/", "networkConfig.ts", "../iota-pico-api-examples-browser/src", ".ts");
-    await copyFiles("../iota-pico-api-examples-nodejs/src/", "typings.d.ts", "../iota-pico-api-examples-browser/src", ".ts");
+    await deleteFiles("../api-examples-browser/src/", "**/*.ts");
+    await copyFiles("../api-examples-nodejs/src/api/", "**/!(*.d).ts", "../api-examples-browser/src/api", ".ts", palReplacement);
+    await copyFiles("../api-examples-nodejs/src/", "networkConfig.ts", "../api-examples-browser/src", ".ts");
+    await copyFiles("../api-examples-nodejs/src/", "typings.d.ts", "../api-examples-browser/src", ".ts");
 }
 doAll();
