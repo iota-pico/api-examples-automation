@@ -1,6 +1,6 @@
 {
     "name": "iota-pico-api-examples-automation",
-    "version": "0.9.5",
+    "version": "0.9.6",
     "description": "Scripts to update IOTA Pico API Example repos from one source.",
     "main": "update-examples.js",
     "author": "martyn@iota.eco",
@@ -8,10 +8,10 @@
     "devDependencies": {
         "@types/del": "^3.0.1",
         "@types/glob": "^5.0.35",
-        "@types/node": "^10.1.1",
+        "@types/node": "^10.3.4",
         "del": "^3.0.0",
         "glob": "^7.1.2",
-        "webpack": "^4.8.3",
-        "webpack-cli": "^2.1.3"
+        "webpack": "^4.12.0",
+        "webpack-cli": "^3.0.8"
     }
 }
